@@ -1,0 +1,2 @@
+# statics
+Equilibrium Game Thing
