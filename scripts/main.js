@@ -8,7 +8,7 @@ let Application = PIXI.Application,
 
 let app = new Application({ 
     width: document.getElementById("canvas").offsetWidth,
-    height: document.getElementById("canvas").offsetHeight,
+    height: 256,
     antialias: true, 
     transparent: false, 
     resolution: 1,
@@ -18,23 +18,24 @@ let app = new Application({
 
 document.getElementById("canvas").appendChild(app.view);
 
-// loader
+loader
 //   .add("res/img/circle.png")
 //   .add("res/img/background.jpg")
 //   .add("res/img/square.jpg")
 //   .add("res/img/spritesheet-human.png")
 //   .add("res/img/triangle.png")
-//   .load(setup)
-let background;
+  .load(setup)
+
+// let background;
 function setup() {
-  const bg = PIXI.Texture.from("res/img/background.jpg");
-  background = new PIXI.Sprite(PIXI.loader.resources["res/img/spritesheet-human.png"].texture);
-  background.width = app.screen.width;
-  background.height = app.screen.height;
-  background.alpha = 0;
-  background.interactive = true;
-  background.on('click', disableButtons);
-  app.stage.addChild(background);
+  // const bg = PIXI.Texture.from("res/img/background.jpg");
+  // background = new PIXI.Sprite(PIXI.loader.resources["res/img/spritesheet-human.png"].texture);
+  // background.width = app.screen.width;
+  // background.height = app.screen.height;
+  // background.alpha = 0;
+  // background.interactive = true;
+  // background.on('click', disableButtons);
+  // app.stage.addChild(background);
 }
 
 // let mouseX = 0;
