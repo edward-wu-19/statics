@@ -3,6 +3,7 @@
 // Task A: Create Canvas
 
 // Task B: Create Table for Buttons, etc.
+// DONE
 
 // Task C: Create Navbar
 
@@ -10,6 +11,7 @@
 // Task 2: Generate level
 
 // Task A: Generate canvas
+// DONE
 
 // Task B: Generate particle
 
@@ -47,7 +49,25 @@
 // Task D: Simulate motion using play() from sample.js
 
 //------------------------------------------------------------------------------
-// Task 6: Optional
+// Task 6: Buttons
+
+// Task A: Update Round Number
+// DONE
+
+// Task B: Submit Button
+
+// Task C: Next Round Button
+
+// Task D: Change between Submit & Next Round Buttons
+
+// Task E: Show Timer
+
+// Task F: Show New Points & Switch between it & Timer
+
+// Task G: Update Total Points
+
+//------------------------------------------------------------------------------
+// Task 7: Optional
 
 // Task A: Help Popup
 
@@ -56,3 +76,5 @@
 // Task C: Uncentered COM
 
 // Task D: More Shapes
+
+// Task E: Actually nice CSS
