@@ -40,7 +40,7 @@ function createForces(n, radius){
     if(xpos>0){
       xpos *= (-xpos);
     }
-    force_array.push(generateForce(xmag, ymag, xpos, ypos);
+    force_array.push(generateForce(xmag, ymag, xpos, ypos));
   }
   return a;
 }
