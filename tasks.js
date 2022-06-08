@@ -1,8 +1,9 @@
 // Task 1: Website Set Up
 
 // Task A: Create Canvas
+// DONE
 
-// Task B: Create Table for Buttons, etc.
+// Task B: Create Fixed Table for Buttons, etc.
 // DONE
 
 // Task C: Create Navbar
@@ -55,16 +56,25 @@
 // DONE
 
 // Task B: Submit Button
+// DONE
 
 // Task C: Next Round Button
+// DONE
 
 // Task D: Change between Submit & Next Round Buttons
+// DONE
 
 // Task E: Show Timer
+// DONE
 
 // Task F: Show New Points & Switch between it & Timer
+// DONE
 
 // Task G: Update Total Points
+// DONE
+
+// Task H: Hide Timer when Submit
+// DONE
 
 //------------------------------------------------------------------------------
 // Task 7: Optional

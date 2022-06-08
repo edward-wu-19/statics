@@ -10,7 +10,7 @@ body{
 
 th, td {
     border: 1px solid;
-    width:30%;
+    width:100px;
     height:63px;
     text-align:center;
 }
@@ -20,7 +20,7 @@ table{
 }
 
 table{
-    width: 60%;
+    width: 300px;
     margin-left: auto;
     margin-right:auto;
     table-layout:fixed;

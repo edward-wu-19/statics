@@ -23,7 +23,7 @@ loader // .shared
   .load(setup)
 
 function setup(){
-  generateParticle();
+  // generateParticle();
 }
 // let background;
 // function setup() {

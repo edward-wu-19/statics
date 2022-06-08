@@ -42,11 +42,16 @@
       <tr>
         <td id="submit">
           <!-- Submit/Next Round Button -->
-          Submit/Next Round
+          <br>
+          <button id="submitCellButton" onclick="showSubmitButton();">Start Game</button>
         </td>
         <td id="timer">
           <!-- Timer & New Points -->
-          Timer & New Points
+          Time Left
+          <div id="time_left">
+            10s
+            <!-- <button id="timerCellButton" onclick="showTimer();">Start</button> -->
+          </div>
         </td>
       </tr>
       <tr>
@@ -57,6 +62,10 @@
         <td id="points">
           <!-- Total Points -->
           Total Points
+          <br>
+          <div id="total_points">
+            0
+          </div>
         </td>
       </tr>
     </table>

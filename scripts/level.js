@@ -8,14 +8,14 @@ function generateParticle(){
     // particle.x = 128;
     // particle.y = 128;
 
-    const particle = new PIXI.Sprite(PIXI.Loader.shared.resources["res/circle.png"].texture);
+    const particle = new PIXI.Sprite(particleTexture);
 
-    app.stage.addChild(particle);
+    // app.stage.addChild(particle);
 
-    particle.visible = true;
+    // particle.visible = true;
 
-    particle.width = 20;
-    particle.height = 20;
+    // particle.width = 20;
+    // particle.height = 20;
 }
 
 generateParticle();
@@ -33,7 +33,7 @@ function createForces(n, radius){
     let ypos = radius * Math.sin(theta);
     xmag = Math.random()*10;
     ymag = Math.random()*10;
-    force_array.push(generateForce(xmag, ymag, xpos, ypos);
+    force_array.push(generateForce(xmag, ymag, xpos, ypos));
   }
   return a;
 }
