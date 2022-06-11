@@ -1,6 +1,24 @@
+var objects = [];
+var particle;
+var currentForces;
+
 function showSubmitButton(){
-  // start round
-    updateRoundNumber();
+    // reset canvas
+    // app.stage.removeChild(particle);
+    if (roundNumber > 0){
+      objects[roundNumber-1].visible = false;
+    }
+
+    currentForces = [];
+
+    // start round
+    setTimeout(function(){
+      updateRoundNumber();
+    }, 1000);
+    // updateRoundNumber();
+
+    // perform level start functions
+    generateLevel();
 
     // start timer
     showTimer();

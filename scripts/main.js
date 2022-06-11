@@ -18,9 +18,10 @@ let app = new Application({
 
 document.getElementById("canvas").appendChild(app.view);
 
-loader // .shared
+PIXI.Loader.shared // .shared
   .add("res/circle.png")
-  .load(setup)
+  .add("res/arrow.png")
+  .load(setup);
 
 function setup(){
   // generateParticle();

@@ -9,40 +9,81 @@ function generateParticle(){
     // particle.x = 128;
     // particle.y = 128;
 
-    const particle = new PIXI.Sprite(particleTexture);
+    var particle = new PIXI.Sprite(
+      PIXI.Loader.shared.resources["res/circle.png"].texture
+    );
 
-    // app.stage.addChild(particle);
+    particle.visible = true;
 
-    // particle.visible = true;
+    particle.x = 192;
+    particle.y = 128;
+    particle.width = 20;
+    particle.height = 20;
 
-    // particle.width = 20;
-    // particle.height = 20;
+    particle.level = roundNumber;
+
+    particle.d = [0, 0, 0, 0, 0];
+    particle.interactive = true;
+    particle.anchor.set(0.5);
+    // if (tint != null){
+    //     DisplayedSprite.tint = tint;
+    // }
+    // DisplayedSprite.timeline = [];
+    // DisplayedSprite.deletedTimeline = [];
+
+    app.stage.addChild(particle);
+    objects.push(particle);
+
+    console.log("hi");
+
+    return particle;
 }
 
-generateParticle();
-
 function generateForce(xmag, ymag, xpos, ypos){
-  let force = {x_mag: xmag, y_mag: ymag, x_pos: xpos, y_pos: ypos};
+  // let force = {x_mag: xmag, y_mag: ymag, x_pos: xpos, y_pos: ypos};
+
+  var force = new PIXI.Sprite(
+    PIXI.Loader.shared.resources["res/arrow.png"].texture
+  );
+
+  force.visible = true;
+
+  force.x = 192 + xpos * particle.width;
+  force.y = 128 + ypos * particle.height;
+  force.width = xmag;
+  force.height = ymag;
+
+  force.level = roundNumber;
+
+  force.d = [0, 0, 0, 0, 0];
+  force.interactive = true;
+  force.anchor.set(0.5);
+  // if (tint != null){
+  //     DisplayedSprite.tint = tint;
+  // }
+  // DisplayedSprite.timeline = [];
+  // DisplayedSprite.deletedTimeline = [];
+
+  app.stage.addChild(force);
+  currentForces.push(force);
+
+  console.log("hi");
+
   return force;
 }
 
 function createForces(n, radius){
-  let force_array = {};
   for(let i = 0; i < n; i++){
-    let theta = 2*Math.pi()*Math.random();
+    let theta = 2*Math.PI*Math.random();
     let xpos = radius * Math.cos(theta);
     let ypos = radius * Math.sin(theta);
-    xmag = Math.random()*10;
-    ymag = Math.random()*10;
-    if(ypos>0){
-      ypos *= (-ypos);
-    }
-    if(xpos>0){
-      xpos *= (-xpos);
-    }
-    force_array.push(generateForce(xmag, ymag, xpos, ypos));
+    xmag = Math.random()*10+20;
+    ymag = Math.random()*10+20;
+    xpos = Math.abs(xpos);
+    ypos = Math.abs(ypos);
+    currentForces.push(generateForce(xmag, ymag, xpos, ypos));
   }
-  return a;
+  return currentForces;
 }
 
 function show_force(force, particle) {
@@ -73,5 +114,8 @@ function netForce(force_array){
 
 // should this function take a parameter of how many forces to have, let it be random in an interval?
 function generateLevel(){
+  // create particle and forces
+  particle = generateParticle();
 
+  createForces(1, particle.width/2.0);
 }
