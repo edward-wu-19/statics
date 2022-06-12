@@ -33,31 +33,10 @@ function showNextRoundButton(){
     submitCellButton.onclick = showSubmitButton;
 }
 
-var new_points = 100;
-
-function displayRoundPoints(){
-  // show points
-  document.getElementById("timer").innerHTML = "+" + new_points + "<br>points";
-
-  // add to total points
-  setTimeout(function(){
-    addPoints(new_points)
-
-    // show next game level
-    showNextRoundButton();
-  }, 1000);
-}
-
 var roundNumber = 0;
 
 function updateRoundNumber(){
     const roundCell = document.getElementById("round");
     roundNumber += 1;
     roundCell.innerHTML = "Round<br>" + roundNumber;
-}
-
-var total_points = 0;
-function addPoints(new_points){
-  total_points += new_points;
-  document.getElementById("total_points").innerHTML = total_points;
 }
