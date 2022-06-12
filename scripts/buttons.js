@@ -1,6 +1,5 @@
 var objects = [];
 var particle;
-var currentForces;
 
 function showSubmitButton(){
     // reset canvas
@@ -9,13 +8,11 @@ function showSubmitButton(){
       objects[roundNumber-1].visible = false;
     }
 
-    currentForces = [];
-
     // start round
-    setTimeout(function(){
-      updateRoundNumber();
-    }, 1000);
-    // updateRoundNumber();
+    // setTimeout(function(){
+    //   updateRoundNumber();
+    // }, 1000);
+    updateRoundNumber();
 
     // perform level start functions
     generateLevel();
@@ -49,44 +46,6 @@ function displayRoundPoints(){
     // show next game level
     showNextRoundButton();
   }, 1000);
-}
-
-function stopTimer(){
-  clearInterval(timer);
-  
-  const submitCellButton = document.getElementById("submitCellButton");
-  submitCellButton.style.visibility = 'hidden';
-
-  displayRoundPoints();
-}
-
-function showTimer(){
-
-  document.getElementById("timer").innerHTML = `Time Left
-  <div id="time_left">
-  </div>`;
-
-  // initialize time
-  var timeLeft = 10;
-  document.getElementById("time_left").innerHTML = timeLeft + "s ";
-
-  // Update the count down every 1 second
-  timer = setInterval(function() {
-
-  timeLeft--;
-  document.getElementById("time_left").innerHTML = timeLeft + "s ";
-
-  // If the count down is finished, write some text
-  if (timeLeft <= 0) {
-    clearInterval(timer);
-
-    const submitCellButton = document.getElementById("submitCellButton");
-    submitCellButton.style.visibility = 'hidden';
-    document.getElementById("timer").innerHTML = "TIME'S UP";
-    
-    setTimeout(function(){displayRoundPoints()}, 1000);
-  }
-}, 1000);
 }
 
 var roundNumber = 0;
