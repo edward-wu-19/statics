@@ -19,8 +19,8 @@ function generateForce(mag, theta, xpos, ypos){
 
     force.visible = true;
 
-    force.x = 192 + xpos * particle.width;
-    force.y = 128 + ypos * particle.height;
+    force.x = halfCanvasWidth + xpos * particle.width;
+    force.y = halfCanvasHeight + ypos * particle.height;
     force.width = mag;
     force.height = forceHeight;
     force.rotation = theta;

@@ -8,7 +8,7 @@ let Application = PIXI.Application,
 
 let app = new Application({ 
     width: 384, // document.getElementById("canvas").offsetWidth, // 
-    height: 256,
+    height: 300,
     antialias: true, 
     transparent: false, 
     resolution: 1,
@@ -29,6 +29,8 @@ let playerForce;
 
 let particleDim = 100;
 let forceHeight = 20;
+let halfCanvasHeight = 150;
+let halfCanvasWidth = 192;
 
 function setup(){
   playerForce = generatePlayerForce();

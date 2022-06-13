@@ -3,19 +3,14 @@ const particleTexture = PIXI.utils.TextureCache["res/circle.png"];
 
 function generateParticle(){
 
-    // particle = new Sprite(particleTexture);
-
-    // particle.x = 128;
-    // particle.y = 128;
-
     var particle = new PIXI.Sprite(
       PIXI.Loader.shared.resources["res/circle.png"].texture
     );
 
     particle.visible = true;
 
-    particle.x = 192;
-    particle.y = 128;
+    particle.x = halfCanvasWidth;
+    particle.y = halfCanvasHeight;
     particle.width = particleDim;
     particle.height = particleDim;
 
