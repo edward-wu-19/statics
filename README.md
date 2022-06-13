@@ -1,5 +1,4 @@
-# statics
-Equilibrium Game Thing
+# Equilibri
 
 #### by Aaron Visser and Edward Wu
 - This game is dedicated to our AP Physics C class by Ms. Sharaf. (Period 5)
