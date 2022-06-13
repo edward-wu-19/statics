@@ -65,6 +65,11 @@ function calculateNetForceMag(){
 
     let values = [given, net];
 
+    // initialize animation
+    particle.d[0] = netx / 100;
+    particle.d[1] = nety / 100;
+    move();
+
     // console.log("net mag is " + net);
 
     return values;

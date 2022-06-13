@@ -16,7 +16,8 @@ function generateParticle(){
 
     particle.level = roundNumber;
 
-    particle.d = [0, 0, 0, 0, 0];
+    // d is the delta x and delta y variables
+    particle.d = [0, 0];
     particle.interactive = true;
     particle.anchor.set(0.5);
 

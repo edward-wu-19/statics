@@ -2,10 +2,12 @@ var objects = [];
 var particle;
 
 function showSubmitButton(){
+
     // reset canvas
     // app.stage.removeChild(particle);
     if (roundNumber > 0){
       objects[roundNumber-1].visible = false;
+      clearInterval(animation);
     }
 
     // start round
