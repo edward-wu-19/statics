@@ -40,3 +40,21 @@ function updateRoundNumber(){
     roundNumber += 1;
     roundCell.innerHTML = "Round<br>" + roundNumber;
 }
+
+function restartGame(){
+  var submitCell = document.getElementById("submit");
+  submitCell.innerHTML = "";
+
+  var x = document.createElement("BUTTON");
+  x.id = "submitCellButton";
+  submitCell.appendChild(x);
+
+  roundNumber = 0;
+
+  clearForces();
+  currentForces = [];
+  
+  total_points = 0;
+
+  showSubmitButton();
+}

@@ -25,7 +25,15 @@ function displayRoundPoints(){
     }
     else{
         // displays game end message in top left cell
-        document.getElementById("submit").innerHTML = "Game over!";
+        var submitCell = document.getElementById("submit");
+        submitCell.innerHTML = "Game over!" + submitCell.innerHTML;
+        setTimeout(function(){
+            const submitCellButton = document.getElementById("submitCellButton");
+            submitCellButton.style.visibility = 'visible';
+            submitCellButton.innerHTML = "Restart?";
+            submitCellButton.onclick = restartGame;
+            // submitCell.innerHTML = ```Game over!<br> <button id="submitCellButton" onclick=restartGame;>Restart?</button>```;
+        }, 1000);
     }
     
   }, 1000);
