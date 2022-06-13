@@ -20,7 +20,7 @@ function onDragStartForce(event) {
         playerForce.height = forceHeight;
         playerForce.width = 100;
 
-        console.log(mouseX + " " + mouseY);
+        // console.log(mouseX + " " + mouseY);
     }    
 }
 
@@ -42,7 +42,7 @@ function onDragMoveForce(event) {
         // this.y = newPosition2.y;
         
         // playerForce.position.set(mouseX, mouseY);
-        console.log(mouseX);
+        // console.log(mouseX);
         playerForce.width = distanceFrom(mouseX, mouseY, playerForce.x, playerForce.y);
         playerForce.height = forceHeight;
 

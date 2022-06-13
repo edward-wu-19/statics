@@ -49,7 +49,7 @@ function calculateNetForceMag(){
     let givenx = 0;
     let giveny = 0;
 
-    console.log(currentForces);
+    // console.log(currentForces);
     for (i in currentForces){
         givenx+= currentForces[i].width * Math.cos(currentForces[i].rotation);
         giveny+= currentForces[i].width * Math.sin(currentForces[i].rotation);
@@ -58,14 +58,14 @@ function calculateNetForceMag(){
     netx = givenx + playerForce.width * Math.cos(playerForce.rotation);
     nety = giveny + playerForce.width * Math.sin(playerForce.rotation);
 
-    console.log("net force is " + netx + " " + nety);
+    // console.log("net force is " + netx + " " + nety);
 
     let given = distanceFrom(givenx, giveny, 0, 0);
     let net = distanceFrom(netx, nety, 0, 0);
 
     let values = [given, net];
 
-    console.log("net mag is " + net);
+    // console.log("net mag is " + net);
 
     return values;
 }

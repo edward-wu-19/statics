@@ -34,7 +34,7 @@ function generateParticle(){
     app.stage.addChild(particle);
     objects.push(particle);
 
-    console.log("hi");
+    // console.log("hi");
 
     return particle;
 }

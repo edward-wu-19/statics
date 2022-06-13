@@ -38,7 +38,7 @@ function generateForce(mag, theta, xpos, ypos){
     app.stage.addChild(force);
     currentForces.push(force);
 
-    console.log("hi");
+    // console.log("hi");
 
     return force;
 }
