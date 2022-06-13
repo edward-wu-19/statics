@@ -62,6 +62,7 @@ function restartGame(){
   ghostParticle.alpha = 0;
   
   total_points = 0;
+    addPoints(0);
 
   showSubmitButton();
 }
