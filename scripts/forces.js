@@ -25,8 +25,6 @@ function generateForce(mag, theta, xpos, ypos){
     force.height = forceHeight;
     force.rotation = theta;
 
-    force.level = roundNumber;
-
     force.anchor.set(0.5);
     force.pivot.set(-275,0);
     // if (tint != null){
@@ -103,4 +101,42 @@ for(let i = 0; i < force_array.length; i++){
     force_array[i].ymag += net_y;
 }
 return generateForce(net_x, net_y, 0, 0);
+}
+
+function displayNetForce(xmag, ymag){
+    var netForce = new PIXI.Sprite(
+        PIXI.Loader.shared.resources["res/net_arrow.png"].texture
+    );
+
+    let mag = distanceFrom(xmag, ymag, 0, 0);
+    var theta;
+    if (xmag > 0){
+        theta = Math.atan(ymag / xmag);
+    }
+    else{
+        theta = Math.PI + Math.atan( ymag / xmag);
+    }
+
+    netForce.visible = true;
+
+    netForce.x = halfCanvasWidth;
+    netForce.y = halfCanvasHeight;
+    netForce.width = mag;
+    netForce.height = forceHeight;
+    netForce.rotation = theta;
+
+    netForce.anchor.set(0.5);
+    netForce.pivot.set(-275,0);
+    // if (tint != null){
+    //     DisplayedSprite.tint = tint;
+    // }
+    // DisplayedSprite.timeline = [];
+    // DisplayedSprite.deletedTimeline = [];
+
+    app.stage.addChild(netForce);
+    currentForces.push(netForce);
+
+    // console.log("hi");
+
+    return netForce;
 }

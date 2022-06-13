@@ -14,8 +14,6 @@ function generateParticle(){
     particle.width = particleDim;
     particle.height = particleDim;
 
-    particle.level = roundNumber;
-
     // d is the delta x and delta y variables
     particle.d = [0, 0];
     particle.interactive = true;
@@ -33,11 +31,30 @@ function generateParticle(){
     // DisplayedSprite.deletedTimeline = [];
 
     app.stage.addChild(particle);
-    objects.push(particle);
+    particlesArray.push(particle);
 
     // console.log("hi");
 
     return particle;
+}
+
+function generateGhostParticle(){
+  var ghostParticle = new PIXI.Sprite(
+    PIXI.Loader.shared.resources["res/circle.png"].texture
+  );
+
+  ghostParticle.visible = true;
+
+  ghostParticle.x = halfCanvasWidth;
+  ghostParticle.y = halfCanvasHeight;
+  ghostParticle.width = particleDim;
+  ghostParticle.height = particleDim;
+
+  ghostParticle.anchor.set(0.5);
+
+  app.stage.addChild(ghostParticle);
+
+  return ghostParticle;
 }
 
 // should this function take a parameter of how many forces to have, let it be random in an interval?

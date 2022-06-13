@@ -65,6 +65,9 @@ function calculateNetForceMag(){
 
     let values = [given, net];
 
+    // show net force in purple
+    displayNetForce(netx, nety);
+
     // initialize animation
     particle.d[0] = netx / 100;
     particle.d[1] = nety / 100;

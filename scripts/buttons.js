@@ -1,4 +1,4 @@
-var objects = [];
+var particlesArray = [];
 var particle;
 
 function showSubmitButton(){
@@ -6,8 +6,9 @@ function showSubmitButton(){
     // reset canvas
     // app.stage.removeChild(particle);
     if (roundNumber > 0){
-      objects[roundNumber-1].visible = false;
+      particlesArray[roundNumber-1].visible = false;
       clearInterval(animation);
+      netForce.alpha = 0;
     }
 
     // start round
@@ -53,8 +54,12 @@ function restartGame(){
 
   roundNumber = 0;
 
+  netForce.alpha = 0;
+
   clearForces();
   currentForces = [];
+
+  ghostParticle.alpha = 0;
   
   total_points = 0;
 

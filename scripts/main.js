@@ -22,6 +22,7 @@ PIXI.Loader.shared // .shared
   .add("res/circle.png")
   .add("res/arrow.png")
   .add("res/player_arrow.png")
+  .add("res/net_arrow.png")
   .add("res/background.jpg")
   .load(setup);
 
@@ -34,6 +35,9 @@ let halfCanvasWidth = 192;
 
 function setup(){
   playerForce = generatePlayerForce();
+
+  ghostParticle = generateGhostParticle();
+  ghostParticle.alpha = 0;
 }
 // let background;
 // function setup() {

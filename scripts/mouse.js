@@ -47,10 +47,10 @@ function onDragMoveForce(event) {
         playerForce.height = forceHeight;
 
         if (mouseX > playerForce.x){
-            playerForce.rotation = Math.atan( (mouseY - playerForce.y ) / (mouseX - playerForce.x))
+            playerForce.rotation = Math.atan( (mouseY - playerForce.y ) / (mouseX - playerForce.x));
         }
         else if (mouseX < playerForce.x){
-            playerForce.rotation = Math.PI + Math.atan( (mouseY - playerForce.y ) / (mouseX - playerForce.x))
+            playerForce.rotation = Math.PI + Math.atan( (mouseY - playerForce.y ) / (mouseX - playerForce.x));
         }
         
         // if (mouseX < 0){

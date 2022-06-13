@@ -1,4 +1,5 @@
 function move() {
+    ghostParticle.alpha = 0.5;
     animation = setInterval(function () {
         particle.x += particle.d[0];
         particle.y += particle.d[1];
