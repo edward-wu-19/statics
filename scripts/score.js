@@ -9,8 +9,8 @@ var new_points = 100;
 
 function displayRoundPoints(){
     // calculate points
-    let mag = calculateNetForceMag();
-    new_points = determineScore(mag)
+    // let mag = calculateNetForceMag();
+    new_points = determineScore()
 
   // show points
   document.getElementById("timer").innerHTML = "+" + new_points + "<br>points";
@@ -52,15 +52,23 @@ function calculateNetForceMag(){
 
     console.log("net force is " + netx + " " + nety);
 
-    let mag = distanceFrom(netx, nety, 0, 0);
+    let given = distanceFrom(givenx, giveny, 0, 0);
+    let net = distanceFrom(netx, nety, 0, 0);
 
-    console.log("mag is " + mag);
+    let values = [given, net];
 
-    return mag;
+    console.log("net mag is " + net);
+
+    return values;
 }
 
-function determineScore(mag){
-    let score = 100 - (mag / 3);
+function determineScore(){
+    let values = calculateNetForceMag();
+
+    let given = values[0];
+    let net = values[1];
+
+    let score = 100 * ( 1 - (net / given));
     if (score < 0) return 0;
     else return Math.round(score);
 }
