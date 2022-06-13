@@ -1,5 +1,7 @@
 const arrowTexture = PIXI.utils.TextureCache["res/arrow.png"];
 
+const forcesPerLevel = [ [ 1, 1, 1, 1, 1, 2, 2, 3, 3, 4], [0, 0, 1, 1, 2, 1, 2, 1, 2, 1]]
+
 var currentForces = [];
 
 function clearForces(){
@@ -41,7 +43,11 @@ function generateForce(mag, theta, xpos, ypos){
     return force;
 }
 
-function createForces(n, radius){
+function numForces(level){
+    return forcesPerLevel[0][level-1] + Math.floor((forcesPerLevel[1][level-1]+1) * Math.random());
+}
+
+function createForces(n){
     for(let i = 0; i < n; i++){
         let mag = Math.random() * 50 + 50;
         let theta = 2*Math.PI*Math.random();

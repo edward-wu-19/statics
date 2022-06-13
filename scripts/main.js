@@ -27,6 +27,7 @@ PIXI.Loader.shared // .shared
 
 let playerForce;
 
+let particleDim = 100;
 let forceHeight = 20;
 
 function setup(){
