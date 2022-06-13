@@ -5,7 +5,7 @@ function addPoints(new_points){
   document.getElementById("total_points").innerHTML = total_points;
 }
 
-var new_points = 100;
+// var new_points = 100;
 
 function displayRoundPoints(){
     // calculate points

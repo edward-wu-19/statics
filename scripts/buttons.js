@@ -5,8 +5,8 @@ function showSubmitButton(){
 
     // reset canvas
     // app.stage.removeChild(particle);
-    if (roundNumber > 0){
-      particlesArray[roundNumber-1].visible = false;
+    if (particlesArray.length > 0){
+      particlesArray[particlesArray.length-1].visible = false;
       clearInterval(animation);
       netForce.alpha = 0;
     }
@@ -62,7 +62,7 @@ function restartGame(){
   ghostParticle.alpha = 0;
   
   total_points = 0;
-    addPoints(0);
+  document.getElementById("total_points").innerHTML = "0";
 
   showSubmitButton();
 }
